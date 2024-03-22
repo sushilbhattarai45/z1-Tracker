@@ -2,12 +2,8 @@ import { Text, View } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
 import { Marker } from "react-native-maps";
 import { Link } from "expo-router";
-import { router } from "expo-router";
+
 export default function Page() {
-  const login = false;
-  setTimeout(() => {
-    router.push("/screens/auth/loginScreen");
-  }, 1000);
   return (
     <View
       style={{
