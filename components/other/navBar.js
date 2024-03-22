@@ -21,7 +21,7 @@ export default function NavBar() {
           fontWeight: "bold",
         }}
       >
-        Search Screen
+        Map Screen
       </Text>
     </View>
   );
