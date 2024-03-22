@@ -20,7 +20,7 @@ export default function NavBar() {
           fontWeight: "bold",
         }}
       >
-        Login Screen
+        Search Screen
       </Text>
     </View>
   );
