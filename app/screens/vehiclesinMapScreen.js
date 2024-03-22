@@ -4,6 +4,7 @@ import NavBar from "../../components/other/navBar";
 import MapView, { Polyline } from "react-native-maps";
 import { Marker } from "react-native-maps";
 import VehicleDataSmallBox from "../../components/vehicleData/vehicleDataSmallBox";
+import VehicleDataBigBox from "../../components/vehicleData/vehicleDataBigBox";
 export default function InfoPage() {
   return (
     <View
@@ -61,32 +62,31 @@ export default function InfoPage() {
           style={{
             position: "absolute",
             bottom: 20,
-            marginHorizontal: 4,
           }}
         >
           <View
             style={{
-              width: Dimensions.get("window").width - 100,
+              width: Dimensions.get("window").width - 50,
               marginHorizontal: 4,
             }}
           >
-            <VehicleDataSmallBox />
+            <VehicleDataBigBox />
           </View>
           <View
             style={{
-              width: Dimensions.get("window").width - 100,
+              width: Dimensions.get("window").width - 50,
               marginHorizontal: 4,
             }}
           >
-            <VehicleDataSmallBox />
+            <VehicleDataBigBox />
           </View>
           <View
             style={{
-              width: Dimensions.get("window").width - 100,
+              width: Dimensions.get("window").width - 50,
               marginHorizontal: 4,
             }}
           >
-            <VehicleDataSmallBox />
+            <VehicleDataBigBox />
           </View>
         </ScrollView>
       </View>
