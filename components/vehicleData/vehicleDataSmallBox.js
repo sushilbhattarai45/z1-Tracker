@@ -21,7 +21,7 @@ export default function VehicleDataSmallBox() {
         style={{
           width: "90%",
           alignSelf: "center",
-          height: 150,
+          height: 130,
           justifyContent: "center",
           alignContent: "center",
           alignItems: "center",

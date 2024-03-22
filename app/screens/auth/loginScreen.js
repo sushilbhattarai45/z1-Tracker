@@ -12,6 +12,7 @@ import { SvgUri } from "react-native-svg";
 
 import Colors from "../../../components/colors";
 import VehicleDataSmallBox from "../../../components/vehicleData/vehicleDataSmallBox";
+import VehicleDataBigBox from "../../../components/vehicleData/vehicleDataBigBox";
 export default function LoginPage() {
   return (
     <View
@@ -222,7 +223,7 @@ export default function LoginPage() {
           </View>
         </View>
         <View style={{ marginBottom: 20 }}>
-          <VehicleDataSmallBox />
+          <VehicleDataBigBox />
         </View>
       </ScrollView>
     </View>
