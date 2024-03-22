@@ -6,7 +6,7 @@ import { router } from "expo-router";
 export default function Page() {
   const login = false;
   setTimeout(() => {
-    router.push("/screens/auth/loginScreen");
+    router.push("/screens/searchScreen");
   }, 1000);
   return (
     <View

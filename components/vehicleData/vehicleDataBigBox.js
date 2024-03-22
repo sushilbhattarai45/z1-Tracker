@@ -19,9 +19,8 @@ export default function VehicleDataBigBox() {
     <View>
       <Pressable
         style={{
-          width: "90%",
+          width: "100%",
           alignSelf: "center",
-          //   height: 200,
           justifyContent: "center",
           alignContent: "center",
           alignItems: "center",

@@ -13,6 +13,8 @@ import { SvgUri } from "react-native-svg";
 import Colors from "../../../components/colors";
 import VehicleDataSmallBox from "../../../components/vehicleData/vehicleDataSmallBox";
 import VehicleDataBigBox from "../../../components/vehicleData/vehicleDataBigBox";
+import NavBar from "../../../components/other/navBar";
+import SearchBar from "../../../components/other/searchBar";
 export default function LoginPage() {
   return (
     <View
@@ -21,6 +23,9 @@ export default function LoginPage() {
         margin: 8,
       }}
     >
+      <NavBar />
+
+      <SearchBar />
       <ScrollView
         style={{
           width: "100%",

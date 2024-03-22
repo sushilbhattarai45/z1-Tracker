@@ -19,7 +19,7 @@ export default function VehicleDataSmallBox() {
     <View>
       <Pressable
         style={{
-          width: "90%",
+          width: "100%",
           alignSelf: "center",
           height: 130,
           justifyContent: "center",
