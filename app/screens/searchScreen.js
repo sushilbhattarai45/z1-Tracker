@@ -34,7 +34,7 @@ export default function SearchScreen() {
           marginBottom: 8,
         }}
       >
-        <ScrollView horizontal={true}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View
             style={{
               backgroundColor: colors.purple,

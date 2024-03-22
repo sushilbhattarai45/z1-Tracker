@@ -6,6 +6,7 @@ export default function NavBar() {
   return (
     <View
       style={{
+        marginTop: 10,
         marginHorizontal: 16,
         display: "flex",
         flexDirection: "row",
