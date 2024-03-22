@@ -11,6 +11,7 @@ import { Link } from "expo-router";
 import { SvgUri } from "react-native-svg";
 
 import Colors from "../../../components/colors";
+import VehicleDataSmallBox from "../../../components/vehicleData/vehicleDataSmallBox";
 export default function LoginPage() {
   return (
     <View
@@ -80,7 +81,7 @@ export default function LoginPage() {
                 style={{
                   color: Colors.purple,
                   fontWeight: "bold",
-                  marginTop: 20,
+                  marginTop: 30,
                   fontSize: 20,
                   width: "90%",
                   alignSelf: "left",
@@ -103,8 +104,6 @@ export default function LoginPage() {
                   fontWeight: "bold",
                   marginBottom: 5,
                   fontSize: 14,
-
-                  alignSelf: "left",
                 }}
               >
                 Username
@@ -191,7 +190,7 @@ export default function LoginPage() {
                     color: Colors.white,
                     fontWeight: "bold",
                     marginBottom: 5,
-                    fontSize: 14,
+                    fontSize: 18,
 
                     alignSelf: "center",
                   }}
@@ -221,6 +220,9 @@ export default function LoginPage() {
               </Text>
             </View>
           </View>
+        </View>
+        <View style={{ marginBottom: 20 }}>
+          <VehicleDataSmallBox />
         </View>
       </ScrollView>
     </View>
