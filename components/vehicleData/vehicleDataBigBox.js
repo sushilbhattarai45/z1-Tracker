@@ -153,7 +153,7 @@ export default function VehicleDataBigBox() {
             </View>
           </View>
 
-          <View style={{ flex: 0.2 }}>
+          <View style={{ flex: 0.2, marginTop: 5 }}>
             <View
               style={{
                 display: "flex",
