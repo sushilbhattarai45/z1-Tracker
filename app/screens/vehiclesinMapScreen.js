@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 import NavBar from "../../components/other/navBar";
 import MapView, { Polyline } from "react-native-maps";
@@ -6,6 +7,49 @@ import { Marker } from "react-native-maps";
 import VehicleDataSmallBox from "../../components/vehicleData/vehicleDataSmallBox";
 import VehicleDataBigBox from "../../components/vehicleData/vehicleDataBigBox";
 export default function InfoPage() {
+  const [position, setPosition] = useState([]);
+  useEffect(() => {
+    // const login = async () => {
+    //   const payload = {
+    //     email: "demo",
+    //     password: "demo",
+    //   };
+
+    //   let cookie = null;
+    //   axios
+    //     .post("http://103.90.86.173:8082/api/session", payload, {
+    //       headers: {
+    //         Accept: "application/json",
+    //         "Content-Type": "application/x-www-form-urlencoded",
+    //       },
+    //     })
+    //     .then((response) => {
+    //       cookie = response.headers["set-cookie"][0];
+    //       console.log(cookie);
+    //       // getDevices(cookie);
+    //     })
+
+    //     .catch((error) => {
+    //       console.error("Error Hello:", error);
+    //     });
+    // };
+    async function getDevices(data) {
+      axios
+        .get("http://103.90.86.173:8082/api/positions", {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Cookie: "JSESSIONID=node01lo9v7wrooga5mzfm887b2ffj68.node0; Path=/",
+          },
+        })
+        .then((response) => {
+          setPosition(response.data);
+        });
+    }
+
+    getDevices();
+  }, []);
+
   return (
     <View
       style={{
@@ -33,7 +77,7 @@ export default function InfoPage() {
             longitudeDelta: 0.0421,
           }}
         >
-          {/* <Polyline
+          <Polyline
             coordinates={[
               { latitude: 27.6955069, longitude: 83.465123 },
               { latitude: 27.68274, longitude: 83.461124 },
@@ -45,7 +89,53 @@ export default function InfoPage() {
             strokeColor="blue" // fallback for when `strokeColors` is not supported by the map-provider
             strokeColors={["red", "green", "blue"]}
             strokeWidth={6}
-          /> */}
+          />
+          {position.map((item, index) => {
+            return (
+              <Marker
+                key={index}
+                title="Vehicle 1"
+                coordinate={{
+                  latitude: parseFloat(item.latitude),
+                  longitude: parseFloat(item.longitude),
+                }}
+                style={{
+                  width: 100,
+                  height: 100,
+                  borderRadius: 50,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: "white",
+                    padding: 5,
+                    borderRadius: 5,
+                    justifyContent: "center",
+                    alignContent: "center",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 8,
+                    }}
+                  >
+                    {item.deviceId}
+                  </Text>
+                </View>
+
+                <Image
+                  source={require("../../assets/car.png")}
+                  style={{
+                    resizeMode: "contain", // Prevent cropping
+                    height: 30,
+                    width: 30,
+                  }}
+                />
+              </Marker>
+            );
+          })}
 
           <Marker
             title="Vehicle 1"
